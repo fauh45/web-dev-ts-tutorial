@@ -159,7 +159,7 @@ To further your understanding of the framework and workflow of this tutorial/tem
 3. PUT route on User to update a User
 4. POST route on Task to create a new task, with its new route definition and controller for it, and don't forget to connect it with the User via its user_id
 
-And to make it easier to see the change on the database, you could use prisma studio, just type in `yarn prisma studion` then follow the link.
+And to make it easier to see the change on the database, you could use prisma studio, just type in `yarn prisma studio` then follow the link.
 
 ## License
 
