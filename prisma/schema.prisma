@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// This model is a simple model in which the User have many Tasks
+
+model User {
+  user_id    Int    @id @default(autoincrement())
+  first_name String @db.VarChar(50)
+  last_name  String @db.VarChar(50)
+  tasks      Task[]
+}
+
+model Task {
+  task_id     String @id @default(uuid())
+  task_name   String
+  user        User?  @relation(fields: [userUser_id], references: [user_id])
+  userUser_id Int?
+}
